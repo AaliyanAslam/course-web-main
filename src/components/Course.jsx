@@ -161,7 +161,7 @@ export default function Course() {
       <div className="flex justify-center py-8">
         <button
           onClick={goToAllCourses}
-          className="cursor-pointer hidden md:block bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-teal-500/20 duration-300 hover:scale-105 animate-bounce"
+          className="cursor-pointer block bg-teal-600 hover:bg-teal-700 px-6 py-3 rounded-lg font-semibold transition shadow-lg hover:shadow-teal-500/20 duration-300 hover:scale-105 animate-bounce"
         >
           Explore More Courses
         </button>
