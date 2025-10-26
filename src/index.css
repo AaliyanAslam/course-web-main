@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+
+body {
+  @apply bg-linear-to-br from-black via-gray-900 to-teal-600 text-white min-h-screen;
+}
+
+@keyframes wiggle {
+  0%, 10%, 90%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+@keyframes wigglee {
+  0%, 10%, 90%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-6px);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+
+/* 👇 Wiggle fast for 1s, then pause for 1s */
+.animate-wiggle {
+  animation: wiggle 0.8s ease-in-out infinite;
+}
+.animate-wiggle-offer {
+  animation: wigglee 0.8s ease-in-out infinite;
+}
+
+
+
+
+
+
