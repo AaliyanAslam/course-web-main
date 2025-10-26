@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import BuyAllCoursesOffer from "./BuyAllCourses";
 
 export default function AllCourses() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const courses = [
     // 🧠 Artificial Intelligence
     {
@@ -239,83 +239,82 @@ export default function AllCourses() {
     },
   ];
 
-  
-  
-function allPrice() {
-  const total = courses.reduce((sum, item) => {
-    const price = parseFloat(item.price.replace("$", ""));
-    return sum + price;
-  }, 0);
-
-  console.log("💰 Total Price:", total);
-  return total;
-}
+  function allPrice() {
+    const total = courses.reduce((sum, item) => {
+      const price = parseFloat(item.price.replace("$", ""));
+      return sum + price;
+    }, 0);
+    console.log("💰 Total Price:", total);
+    return total;
+  }
 
   useEffect(() => {
-    allPrice()
-   
-  }, [])
+    allPrice();
+  }, []);
+
   return (
     <div
-      className="min-h-screen py-35 px-6  text-white select-none "
+      className="min-h-screen py-20 sm:py-24 px-4 sm:px-6 lg:px-10 text-white select-none"
       style={{ fontFamily: "Poppins" }}
     >
       {/* Section Header */}
-    <div className="flex justify-between">
-      <div></div>
-      <div>
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-6">
-        All <span className="text-teal-400">Courses</span>
-      </h2>
-      <p className="text-gray-300 text-center max-w-2xl mx-auto mb-12">
-        Browse through all our top categories and find the perfect course to boost your skills.
-      </p>
+      <div className="flex flex-col lg:flex-row justify-between items-center gap-6 mb-10">
+        <div className="order-2 lg:order-1">
+          <BuyAllCoursesOffer />
+        </div>
+
+        <div className="text-center lg:order-2 w-full">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+            All <span className="text-teal-400">Courses</span>
+          </h2>
+          <p className="text-gray-300 max-w-2xl mx-auto text-sm sm:text-base">
+            Browse through all our top categories and find the perfect course to boost your skills.
+          </p>
+        </div>
+
+        <div className="hidden lg:block order-3"></div>
       </div>
-      <div>
-        <BuyAllCoursesOffer/>
-      </div>
-    </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mx-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-8 mx-auto max-w-7xl">
         {courses.map((course) => (
           <div
             key={course.id}
             className="bg-gray-900/90 border border-gray-700 rounded-2xl overflow-hidden shadow-lg hover:shadow-teal-500/20 transition-transform duration-300 hover:scale-105"
           >
-            <div className="relative w-full h-52 overflow-hidden">
+            <div className="relative w-full h-48 sm:h-52 overflow-hidden">
               <img
                 src={course.image}
                 alt={course.title}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
               />
               {course.tag && (
-                <span className="absolute top-2 right-2 bg-teal-600 text-xs px-3 py-1 rounded-full font-semibold">
+                <span className="absolute top-2 right-2 bg-teal-600 text-[10px] sm:text-xs px-2 sm:px-3 py-1 rounded-full font-semibold">
                   {course.tag}
                 </span>
               )}
             </div>
 
-            <div className="p-5 flex flex-col justify-between h-[260px]">
+            <div className="p-5 flex flex-col justify-between h-[240px] sm:h-[260px]">
               <div>
-                <h3 className="text-lg font-semibold mb-2">{course.title}</h3>
-                <p className="text-gray-400 text-sm mb-2">{course.field}</p>
+                <h3 className="text-base sm:text-lg font-semibold mb-2">{course.title}</h3>
+                <p className="text-gray-400 text-xs sm:text-sm mb-2">{course.field}</p>
 
-                <div className="flex items-center justify-between text-sm">
+                <div className="flex items-center justify-between text-xs sm:text-sm">
                   <div className="text-white font-semibold">
                     {course.price}{" "}
                     <span className="text-gray-400 line-through font-normal ml-2">
                       {course.oldPrice}
                     </span>
                   </div>
-                  <span className="bg-white text-black text-xs px-2 py-0.5 rounded font-bold">
+                  <span className="bg-white text-black text-[10px] sm:text-xs px-2 py-0.5 rounded font-bold">
                     {course.discount}
                   </span>
                 </div>
               </div>
 
               <button
-                className="mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white py-2.5 rounded-lg font-semibold transition cursor-pointer"
+                className="mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white py-2.5 rounded-lg font-semibold transition cursor-pointer text-sm sm:text-base"
               >
                 {course.buttonText}
               </button>
@@ -323,10 +322,13 @@ function allPrice() {
           </div>
         ))}
       </div>
-           <div className="flex justify-center mt-16">
-        <button onClick={()=>{
-          navigate("/free-courses")
-        }} className="cursor-pointer bg-teal-600 hover:bg-teal-700 px-8 py-3 rounded-xl font-semibold shadow-[0_0_25px_rgba(13,148,136,0.6)] transition">
+
+      {/* Bottom Button */}
+      <div className="flex justify-center mt-12 sm:mt-16">
+        <button
+          onClick={() => navigate("/free-courses")}
+          className="cursor-pointer bg-teal-600 hover:bg-teal-700 px-6 sm:px-8 py-2.5 sm:py-3 rounded-xl font-semibold shadow-[0_0_25px_rgba(13,148,136,0.6)] transition text-sm sm:text-base"
+        >
           Explore All Free Courses
         </button>
       </div>

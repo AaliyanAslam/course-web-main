@@ -116,51 +116,53 @@ export default function FreeCourses() {
 
   return (
     <section
-      className="min-h-screen py-35 px-6 text-white select-none"
+      className="min-h-screen py-24 px-4 sm:px-6 lg:px-10 text-white select-none"
       style={{ fontFamily: "Poppins" }}
     >
       {/* 🌟 Section Header */}
       <div className="text-center mb-12">
-        <h2 className="text-4xl md:text-5xl font-bold">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">
           <span className="text-teal-400">Free Courses</span> to Kickstart Your Learning 🚀
         </h2>
-        <p className="text-gray-300 max-w-2xl mx-auto mt-4">
+        <p className="text-gray-300 max-w-2xl mx-auto mt-4 text-sm sm:text-base md:text-lg">
           Start your journey with our beginner-friendly and totally free tech courses — no payment, no limits, just learning!
         </p>
       </div>
 
       {/* 📚 Courses Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 mx-10">
+      <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8 mx-auto max-w-7xl">
         {freeCourses.map((course) => (
           <div
             key={course.id}
-            className="bg-gray-900/90 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(13,148,136,0.4)] hover:scale-105 transition-transform duration-300"
+            className="flex flex-col h-full bg-gray-900/90 border border-gray-800 rounded-2xl overflow-hidden shadow-lg hover:shadow-[0_0_25px_rgba(13,148,136,0.4)] hover:scale-105 transition-transform duration-300"
           >
             {/* Thumbnail */}
-            <div className="relative w-full h-52 overflow-hidden">
+            <div className="relative w-full h-44 sm:h-52 overflow-hidden">
               <img
                 src={course.image}
                 alt={course.title}
                 className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
               />
-              <span className="absolute top-3 right-3 bg-teal-600 text-xs px-3 py-1 rounded-full font-bold shadow-lg">
+              <span className="absolute top-3 right-3 bg-teal-600 text-xs sm:text-sm px-3 py-1 rounded-full font-bold shadow-lg">
                 {course.tag}
               </span>
             </div>
 
             {/* Content */}
-            <div className="p-5">
-              <h3 className="text-xl font-semibold mb-2 text-white">
-                {course.title}
-              </h3>
-              <p className="text-gray-400 text-sm mb-3">{course.category}</p>
+            <div className="flex flex-col flex-grow p-4 sm:p-5 justify-between">
+              <div>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white leading-snug">
+                  {course.title}
+                </h3>
+                <p className="text-gray-400 text-xs sm:text-sm mb-3">{course.category}</p>
 
-              <div className="flex items-center justify-between text-sm text-gray-400 mb-4">
-                <span>⏱ {course.duration}</span>
-                <span>🎯 {course.level}</span>
+                <div className="flex flex-wrap items-center justify-between text-xs sm:text-sm text-gray-400 mb-4 gap-1">
+                  <span>⏱ {course.duration}</span>
+                  <span>🎯 {course.level}</span>
+                </div>
               </div>
 
-              <button className="cursor-pointer w-full py-2.5 bg-teal-600 hover:bg-teal-700 rounded-lg font-semibold transition-all shadow-[0_0_15px_rgba(13,148,136,0.4)] hover:shadow-[0_0_25px_rgba(13,148,136,0.6)]">
+              <button className="cursor-pointer w-full py-2 sm:py-2.5 bg-teal-600 hover:bg-teal-700 rounded-lg font-semibold transition-all shadow-[0_0_15px_rgba(13,148,136,0.4)] hover:shadow-[0_0_25px_rgba(13,148,136,0.6)] text-sm sm:text-base">
                 Start Learning
               </button>
             </div>
@@ -168,10 +170,8 @@ export default function FreeCourses() {
         ))}
       </div>
 
-      {/* CTA */}
-      <div className="flex justify-center mt-16">
-     
-      </div>
+      {/* CTA Placeholder */}
+      <div className="flex justify-center mt-16"></div>
     </section>
   );
 }
