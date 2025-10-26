@@ -32,7 +32,7 @@ export default function BuyAllCoursesOfferModal() {
         onClick={() => setIsOpen(true)}
         className="
           fixed top-45
-          top-24 right-4 
+          right-4 
           sm:top-24 sm:right-4 
           xs:top-16 xs:right-2 
           max-xs:top-14 
