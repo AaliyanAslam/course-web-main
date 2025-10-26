@@ -35,7 +35,7 @@ export default function LoginPage() {
         {/* Left: Branding / Illustration */}
         <div className="hidden md:flex flex-col gap-6 px-6 lg:px-8">
           <div className="flex items-center gap-3" style={{ fontFamily: "Poppins" }}>
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-teal-400 to-teal-500 p-1">
+            <div className="w-12 h-12 rounded-xl bg-linear-to-br from-teal-400 to-teal-500 p-1">
               <div className="bg-black h-full w-full rounded-lg flex items-center justify-center">
                 <img src="/images/greentreasure.png" alt="logo" className="w-7 h-7 object-contain" />
               </div>
@@ -67,7 +67,7 @@ export default function LoginPage() {
         </div>
 
         {/* Right: Card */}
-        <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-3xl p-6 sm:p-8 shadow-2xl">
+        <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-3xl mt-12 p-6 sm:p-8 shadow-2xl">
           <h1
             className="text-2xl sm:text-3xl font-heading font-bold text-white mb-2"
             style={{ fontFamily: "montserrat" }}

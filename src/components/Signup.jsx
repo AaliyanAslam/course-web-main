@@ -67,7 +67,7 @@ export default function SignupPage() {
         </div>
 
         {/* RIGHT SECTION */}
-        <div className="bg-black/60 backdrop-blur-md border border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl">
+        <div className="bg-black/60 backdrop-blur-md border mt-10 border-white/10 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl">
           <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2" style={{ fontFamily: "Montserrat" }}>
             Sign Up
           </h1>
